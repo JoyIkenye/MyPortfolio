@@ -55,7 +55,7 @@ const About = () => {
           transform : 'translateX(0px)' 
         }}
         >
-      <h3>Frontend Developer</h3>
+      <h3>Frontend Engineer</h3>
       <p>{jobSummary}</p>
       </Animate>
 
