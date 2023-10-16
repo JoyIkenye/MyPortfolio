@@ -3,8 +3,8 @@ import {BsInfoCircleFill} from 'react-icons/bs';
 import PageHeaderContent from '../../components/pageHeaderContent';
 import { Animate } from 'react-simple-animate';
 import './style.scss';
-import {DiApple, DiAndroid} from 'react-icons/di';
-import {FaDev, FaDatabase} from 'react-icons/fa';
+import {FaReact,  FaHtml5, FaCss3Alt} from 'react-icons/fa';
+import {IoLogoJavascript} from 'react-icons/io';
 
 
 
@@ -27,11 +27,11 @@ const personalDetails =[
   },
   {
     label: "Contact No",
-    value: "08080834653",
+    value: "09163646952",
   }
 ]
 
-const jobSummary = "A Frontend Developer with 3 months experience in blending the art of design with skill of programming to deliver engaging user experience through efficient website development. Very passionate about translating design mockups and wireframes into responsive, interactive, and accessible user interfaces. Demonstrating willingness to learn and grow as a front-end developer, seeking guidance and mentorship from experienced team members"
+const jobSummary = "Skilled Frontend Engineer specializing in designing and developing responsive and user-friendly web interfaces. Proficient in modern web technologies including HTML, CSS, JavaScript, and various Frontend frameworks such as ReactJs. Collaborative team player dedicated to delivering high-quality, performance driven web applications."
 
 const About = () => {
   return (
@@ -97,16 +97,16 @@ const About = () => {
         >
         <div className='about__content__servicesWrapper__innerContent'>
         <div>
-          <FaDev size={60} color='var(--gold-theme-main-color)'/>
+          <FaReact size={60} color='var(--gold-theme-main-color)'/>
         </div>
         <div>
-        <DiAndroid size={60} color='var(--gold-theme-main-color)'/>
+        <FaHtml5 size={60} color='var(--gold-theme-main-color)'/>
         </div>
         <div>
-        <FaDatabase size={60} color='var(--gold-theme-main-color)'/>
+        <IoLogoJavascript size={60} color='var(--gold-theme-main-color)'/>
         </div>
         <div>
-        <DiApple size={60} color='var(--gold-theme-main-color)'/>
+        <FaCss3Alt size={60} color='var(--gold-theme-main-color)'/>
         </div>
         </div>
         </Animate> 
