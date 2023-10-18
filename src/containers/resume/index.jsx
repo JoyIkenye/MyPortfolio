@@ -1,16 +1,98 @@
-import React from 'react';
-import {BsInfoCircleFill} from 'react-icons/bs';
-import PageHeaderContent from '../../components/pageHeaderContent';
+import React from "react";
+import { FaBlackTie } from "react-icons/fa";
+import PageHeaderContent from "../../components/pageHeaderContent";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import 'react-vertical-timeline-component/style.min.css';
+import { data } from "./utils";
+import { v4 as uuidv4 } from "uuid";
+import "./style.scss";
+import {MdWork} from "react-icons/md"
 
 const Resume = () => {
   return (
-    <section id='resume' className='resume'>
-    <PageHeaderContent
-    headerText = "My Resume"
-    icon = {<BsInfoCircleFill size={40}/>}
-    />
-   </section>
-  )
-}
+    <section id="resume" className="resume">
+      <PageHeaderContent
+        headerText="My Resume"
+        icon={<FaBlackTie size={40} />}
+      />
+      <div className="timeline">
+        <div className="timeline__experience">
+          <h3 className="timeline__experience__header-text">Experience</h3>
+          <VerticalTimeline
+            layout="1-column"
+            lineColor="var(--gold-theme-main-color)"
+          >
+            {data.experience.map((item) => (
+              <VerticalTimelineElement
+                key={uuidv4()}
+                className="timeline__experience__vertical-timeline-element"
+                contentStyle={{
+                 background : 'none',
+                 color : 'var(--gold-theme-sub-text-color)',
+                 border : '1.5px solid var(--gold-theme-main-color)'
+                }}
+                icon = {<MdWork/>}
+                iconStyle={{
+                  background : "#181818",
+                  color : "var(--gold-theme-main-color)"
+                }}
+              >
+                <div className="vertical-timeline-element-title-wrapper">
+                  <h3>
+                    {item.title}
+                  </h3>
+                  <h4>
+                    {item.subTitle}
+                  </h4>
+                </div>
+                <p className="vertical-timeline-element-title-wrapper-description">{item.description}</p>
+                  <p className="vertical-timeline-element-title-wrapper-description__date">{item.date}</p>
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
+        </div>
+
+        <div className="timeline__education">
+          <h3 className="timeline__education__header-text">Education</h3>
+          <VerticalTimeline
+            layout="1-column"
+            lineColor="var(--gold-theme-main-color)"
+          >
+            {data.education.map((item) => (
+              <VerticalTimelineElement
+                key={uuidv4()}
+                className="timeline__experience__vertical-timeline-element"
+                contentStyle={{
+                  background : 'none',
+                  color : 'var(--gold-theme-sub-text-color)',
+                  border : '1.5px solid var(--gold-theme-main-color)'
+                 }} 
+                icon = {<MdWork/>}
+                iconStyle={{
+                  background : "#181818",
+                  color : "var(--gold-theme-main-color)"
+                }}
+              >
+                <div className="vertical-timeline-element-title-wrapper">
+                  <h3>
+                    {item.title}
+                  </h3>
+                  <h4>
+                    {item.subTitle}
+                  </h4>
+                </div>
+                <p className="vertical-timeline-element-title-wrapper-description">{item.description}</p>
+                  <p className="vertical-timeline-element-title-wrapper-description__date">{item.date}</p>
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Resume;
